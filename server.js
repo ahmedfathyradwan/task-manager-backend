@@ -22,6 +22,9 @@ app.use(morgan('dev'));
 connectDB();
 
 // Routes
+app.get('/', (req, res) => {
+  res.status(200).send('Task Manager API is running...');
+});
 app.use('/api/tasks', taskRoutes);
 
 if (process.env.NODE_ENV !== 'production') {
